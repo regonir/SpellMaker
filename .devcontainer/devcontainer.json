@@ -1,0 +1,27 @@
+{
+    "name": "Spell Maker",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cmake-tools",
+                "twxs.cmake",
+                "github.copilot"
+            ]
+        }
+    },
+    "features": {
+        "desktop-lite": {
+            "password": "vscode",
+            "webPort": "6080",
+            "vncPort": "5901"
+        }
+    },
+    "forwardPorts": [6080, 5901],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libwxgtk3.0-gtk3-dev wx-common && wx-config --version"
+}
+
